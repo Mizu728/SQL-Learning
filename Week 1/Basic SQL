@@ -1,14 +1,16 @@
--- 日期:10/13
--- 今天學了:GROUP BY 和 HAVING
--- 心得:HAVING 是用在分組之後篩選,WHERE 是分組之前。一開始搞混,寫錯了一次。
+2026/10/12
 
--- 練習 1:各國家的客戶人數
-SELECT Country, COUNT(*) AS customer_count
-FROM Customer
-GROUP BY Country;
+--建立資料表：
+CREATE TABLE celebs (
+   id INTEGER, 
+   name TEXT, 
+   age INTEGER
+);
 
--- 練習 2:只看客戶數超過 5 人的國家
-SELECT Country, COUNT(*) AS customer_count
-FROM Customer
-GROUP BY Country
-HAVING COUNT(*) > 5;
+-- 新增資料：
+INSERT INTO celebs (id, name, age) 
+VALUES (1, 'Justin Bieber', 29);
+
+--新增欄位：
+ALTER TABLE celebs 
+ADD COLUMN twitter_handle TEXT;
