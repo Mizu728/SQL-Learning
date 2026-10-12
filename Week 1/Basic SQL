@@ -14,3 +14,22 @@ VALUES (1, 'Justin Bieber', 29);
 --新增欄位：
 ALTER TABLE celebs 
 ADD COLUMN twitter_handle TEXT;
+
+--更新資料：
+UPDATE celebs 
+SET twitter_handle = '@taylorswift13' 
+WHERE id = 4; 
+
+--刪除資料：
+DELETE FROM celebs 
+WHERE twitter_handle IS NULL;
+
+--設定限制：
+CREATE TABLE celebs (
+   id INTEGER PRIMARY KEY, 
+   name TEXT UNIQUE,
+   date_of_birth TEXT NOT NULL,
+   date_of_death TEXT DEFAULT 'Not Applicable'
+);
+
+
