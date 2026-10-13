@@ -24,7 +24,7 @@ WHERE id = 4;
 DELETE FROM celebs 
 WHERE twitter_handle IS NULL;
 
---設定限制：
+--設定限制 Constraints：
 CREATE TABLE celebs (
    id INTEGER PRIMARY KEY, 
    name TEXT UNIQUE,
