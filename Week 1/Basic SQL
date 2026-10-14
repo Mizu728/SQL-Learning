@@ -39,17 +39,14 @@ CREATE TABLE celebs (
 SELECT name AS '______'
 FROM movies;
 
-
 --找出唯一值 DISTINCT：
 SELECT DISTINCT genre 
 FROM movies;
-
 
 --篩選條件 WHERE：
 SELECT *
 FROM movies
 WHERE imdb_rating > / < / = / != / >= / <= 8;
-
 
 --找出特定開頭/結尾的資料 LIKE：
 SELECT * 
@@ -61,7 +58,7 @@ FROM movies
 WHERE name LIKE 'A%' / 'A %';
 
 
-找出空值 NULL：
+--找出空值 NULL：
 SELECT name
 FROM movies 
 WHERE imdb_rating IS / IS NOT NULL;
@@ -76,20 +73,35 @@ SELECT *
 FROM movies
 WHERE name BETWEEN 'A' AND 'J';  --不包含 'J'
 
-
-聯集 AND：
+--聯集 AND：
 SELECT * 
 FROM movies
 WHERE year BETWEEN 1990 AND 1999
    AND genre = 'romance';
 
-
-或 OR：
+--或 OR：
 SELECT *
 FROM movies
 WHERE year > 2014
    OR genre = 'action';
 
+--排序資料 ORDER BY：
+SELECT *
+FROM movies
+WHERE imdb_rating > 8
+ORDER BY year DESC;
 
+--限制回傳資料數 LIMIT：
+SELECT *
+FROM movies
+LIMIT 10;
 
+--設定資料分類方式 CASE THEN ELSD END：
+SELECT name,
+ CASE
+  WHEN genre = 'romance' OR genre = 'comedy' 
+   THEN 'Chill'
+  ELSE 'Intense'
+ END AS 'Mood'
+FROM movies;
 
