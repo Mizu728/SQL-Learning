@@ -85,5 +85,11 @@ WHERE year BETWEEN 1990 AND 1999
 
 
 或 OR：
+SELECT *
+FROM movies
+WHERE year > 2014
+   OR genre = 'action';
+
+
 
 
