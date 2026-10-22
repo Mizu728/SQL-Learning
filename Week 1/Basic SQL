@@ -106,5 +106,16 @@ SELECT name,
 FROM movies;
 
 
-2026/10/14
+2026/10/22
+
+--回傳日期/時間 strftime：
+strftime(__, timestamp):
+
+%Y returns the year (YYYY)
+%m returns the month (01-12)
+%d returns the day of the month (1-31)
+%H returns 24-hour clock (00-23)
+%M returns the minute (00-59)
+%S returns the seconds (00-59)
+if timestamp format is YYYY-MM-DD HH:MM:SS.
 
